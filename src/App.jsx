@@ -5,7 +5,7 @@ import ProfileSection from "./components/ProfileSection";
 function App() {
   return (
     <div className="text-base leading-base text-neutral-500 min-h-screen bg-neutral-100 px-4 py-8 flex justify-center">
-      <div className="flex flex-col gap-8 max-w-182.5">
+      <div className="grow flex flex-col gap-8 max-w-182.5">
         <Header />
         <SearchBar />
         <ProfileSection />
