@@ -1,11 +1,29 @@
 import { useState } from "react";
 import searchIcon from "/images/icon-search.svg";
 
-function SearchBar() {
+function SearchBar({ setData, setError }) {
   const [searchedValue, setSearchedValue] = useState("");
+
+  function getFetchedData() {
+    try {
+      const response = await fetch(`https://api.github.com/users/${searchedValue}`);
+
+      if (!response.ok) throw new Error("No results");
+
+      const data = await response.json();
+
+      setData(data);
+      setError(false);
+    }
+    catch(e) {
+      setError(true);
+    }
+  }
 
   function handleSubmit(e) {
     e.preventDefault();
+
+    getFetchedData();
   }
 
   return (
