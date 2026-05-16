@@ -12,7 +12,7 @@ function App() {
       <div className="grow flex flex-col gap-8 max-w-182.5">
         <Header />
         <SearchBar setData={setData} setError={setError} />
-        <ProfileSection />
+        <ProfileSection data={data} />
       </div>
     </div>
   )

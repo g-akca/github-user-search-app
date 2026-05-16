@@ -4,7 +4,7 @@ import searchIcon from "/images/icon-search.svg";
 function SearchBar({ setData, setError }) {
   const [searchedValue, setSearchedValue] = useState("");
 
-  function getFetchedData() {
+  async function getFetchedData() {
     try {
       const response = await fetch(`https://api.github.com/users/${searchedValue}`);
 

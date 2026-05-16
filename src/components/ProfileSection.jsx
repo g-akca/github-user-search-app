@@ -1,16 +1,16 @@
 import ProfileHeader from "./ProfileHeader";
 import ProfileInfo from "./ProfileInfo";
 
-function ProfileSection() {
+function ProfileSection({ data }) {
   return (
     <main className="bg-white rounded-[15px] shadow-[0_16px_30px_-10px_rgba(70,96,187,0.2)] px-6 py-8 flex flex-col gap-6">
       <div className="flex gap-5 items-start">
-        <img src="" alt="" className="w-17.5 aspect-square rounded-full" />
+        <img src={data.avatar_url} alt="Profile image" className="w-17.5 aspect-square rounded-full" />
 
-        <ProfileHeader />
+        <ProfileHeader data={data} />
       </div>
       
-      <ProfileInfo />
+      <ProfileInfo data={data} />
     </main>
   )
 }
