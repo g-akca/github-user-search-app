@@ -1,12 +1,16 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import searchIcon from "/images/icon-search.svg";
 
 function SearchBar({ setData, setError }) {
   const [searchedValue, setSearchedValue] = useState("");
 
-  async function getFetchedData() {
+  useEffect(() => {
+    getFetchedData("octocat");
+  }, []);
+
+  async function getFetchedData(username) {
     try {
-      const response = await fetch(`https://api.github.com/users/${searchedValue}`);
+      const response = await fetch(`https://api.github.com/users/${username}`);
 
       if (!response.ok) throw new Error("No results");
 
@@ -23,7 +27,7 @@ function SearchBar({ setData, setError }) {
   function handleSubmit(e) {
     e.preventDefault();
 
-    getFetchedData();
+    getFetchedData(searchedValue);
   }
 
   return (
