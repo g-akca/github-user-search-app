@@ -15,7 +15,7 @@ function App() {
         <SearchBar setData={setData} setError={setError} setLoading={setLoading} />
 
         {!loading ? (
-          <ProfileSection data={data} />
+          <ProfileSection data={data} error={error} />
         ) : (
           <p className="text-center">Loading...</p>
         )}
