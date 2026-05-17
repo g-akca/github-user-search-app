@@ -6,7 +6,7 @@ import companyIcon from "/images/icon-company.svg";
 function ProfileInfo({ data }) {
   return (
     <div className="flex flex-col gap-6">
-      <p className="opacity-75">{data.bio ? data.bio : "This profile has no bio"}</p>
+      <p className={data.bio || "opacity-75"}>{data.bio ? data.bio : "This profile has no bio"}</p>
 
       <div className="bg-neutral-100 rounded-[10px] py-4 px-5 flex flex-col gap-4">
         <div className="flex flex-col gap-1">
