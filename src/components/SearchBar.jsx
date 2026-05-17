@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import searchIcon from "/images/icon-search.svg";
 
-function SearchBar({ setData, setError }) {
+function SearchBar({ setData, setError, setLoading }) {
   const [searchedValue, setSearchedValue] = useState("");
 
   useEffect(() => {
@@ -9,6 +9,8 @@ function SearchBar({ setData, setError }) {
   }, []);
 
   async function getFetchedData(username) {
+    setLoading(true);
+
     try {
       const response = await fetch(`https://api.github.com/users/${username}`);
 
@@ -22,6 +24,8 @@ function SearchBar({ setData, setError }) {
     catch(e) {
       setError(true);
     }
+
+    setLoading(false);
   }
 
   function handleSubmit(e) {
