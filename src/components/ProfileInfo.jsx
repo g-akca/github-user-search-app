@@ -26,22 +26,22 @@ function ProfileInfo({ data }) {
       </div>
 
       <div className="flex flex-col gap-4">
-        <div className="flex items-center gap-4">
+        <div className={`flex items-center gap-4 ${data.location || "opacity-70"}`}>
           <img src={locationIcon} alt="Location icon" />
           <p>{data.location ? data.location : "Not Available"}</p>
         </div>
 
-        <div className="flex items-center gap-4 opacity-70">
+        <div className={`flex items-center gap-4 ${data.twitter_username || "opacity-70"}`}>
           <img src={twitterIcon} alt="Twitter icon" />
           <p>{data.twitter_username ? data.twitter_username : "Not Available"}</p>
         </div>
 
-        <div className="flex items-center gap-4">
+        <div className={`flex items-center gap-4 ${data.blog || "opacity-70"}`}>
           <img src={websiteIcon} alt="Website icon" />
           <p>{data.blog ? data.blog : "Not Available"}</p>
         </div>
 
-        <div className="flex items-center gap-4">
+        <div className={`flex items-center gap-4 ${data.company || "opacity-70"}`}>
           <img src={companyIcon} alt="Company icon" />
           <p>{data.company ? data.company : "Not Available"}</p>
         </div>
