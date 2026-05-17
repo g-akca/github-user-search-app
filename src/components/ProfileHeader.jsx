@@ -1,6 +1,6 @@
 function ProfileHeader({ data, className }) {
   return (
-    <div className={`flex flex-col gap-1 ${className}`}>
+    <div className={`flex flex-col gap-1 tablet:flex-row tablet:justify-between ${className}`}>
       <div className="flex flex-col gap-0.5">
         <h2 className="text-[26px] leading-[120%] font-bold text-neutral-700">{data.name}</h2>
         <p className="text-[16px] leading-base text-blue-500">@{data.login}</p>

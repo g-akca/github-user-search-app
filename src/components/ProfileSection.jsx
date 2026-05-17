@@ -12,7 +12,7 @@ function ProfileSection({ data, error }) {
             <ProfileHeader data={data} className="tablet:hidden" />
           </div>
           
-          <div className="flex flex-col gap-6">
+          <div className="grow flex flex-col gap-6">
             <ProfileHeader data={data} className="hidden tablet:flex" />
 
             <ProfileInfo data={data} />
