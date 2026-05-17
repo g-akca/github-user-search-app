@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import searchIcon from "/images/icon-search.svg";
 
-function SearchBar({ setData, setError, setLoading }) {
+function SearchBar({ setData, setError, setLoading, error }) {
   const [searchedValue, setSearchedValue] = useState("");
 
   useEffect(() => {
@@ -35,16 +35,19 @@ function SearchBar({ setData, setError, setLoading }) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="bg-white px-3 py-2 h-17.25 rounded-2xl shadow-[0_16px_30px_-10px_rgba(70,96,187,0.2)] flex justify-between items-center gap-1">
-      <div className="grow flex gap-2 items-center">
+    <form onSubmit={handleSubmit} className="bg-white px-3 py-2 h-17.25 rounded-2xl shadow-[0_16px_30px_-10px_rgba(70,96,187,0.2)] flex justify-between items-center gap-2">
+      <div className="grow flex gap-2 items-center justify-between">
         <img src={searchIcon} alt="Search icon" className="w-5" />
 
         <input 
+          id="username"
           className="grow text-[13px] leading-[140%] text-neutral-700 placeholder:text-neutral-500" 
           placeholder="Search GitHub username…" 
           value={searchedValue}
           onChange={(e) => setSearchedValue(e.target.value)}
         />
+
+        {error && <p className="text-red-500 text-[12px] leading-base font-bold">No results</p>}
       </div>
 
       <button type="submit" className="h-12 px-5 py-3 bg-blue-500 rounded-[10px] text-white text-[16px] leading-base font-bold">

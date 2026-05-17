@@ -12,7 +12,7 @@ function App() {
     <div className="text-base leading-base text-neutral-500 min-h-screen bg-neutral-100 px-4 py-8 flex justify-center">
       <div className="grow flex flex-col gap-8 max-w-182.5">
         <Header />
-        <SearchBar setData={setData} setError={setError} setLoading={setLoading} />
+        <SearchBar setData={setData} setError={setError} setLoading={setLoading} error={error} />
 
         {!loading ? (
           <ProfileSection data={data} error={error} />
