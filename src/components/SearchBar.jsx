@@ -37,7 +37,7 @@ function SearchBar({ setData, setError, setLoading, error }) {
   return (
     <form 
       onSubmit={handleSubmit} 
-      className="bg-white px-3 py-2 h-17.25 rounded-2xl shadow-[0_16px_30px_-10px_rgba(70,96,187,0.2)] flex justify-between items-center gap-1.5 tablet:pl-6"
+      className="bg-white px-3 py-2 h-17.25 rounded-2xl shadow-[0_16px_30px_-10px_rgba(70,96,187,0.2)] flex justify-between items-center gap-1.5 tablet:gap-6 tablet:pl-6"
     >
       <div className="grow flex gap-2 items-center justify-between tablet:gap-5">
         <img src={searchIcon} alt="Search icon" className="w-5 tablet:w-6" />
@@ -53,7 +53,10 @@ function SearchBar({ setData, setError, setLoading, error }) {
         {error && <p className="whitespace-nowrap text-red-500 text-[11px] leading-base font-bold tablet:text-[16px]">No results</p>}
       </div>
 
-      <button type="submit" className="h-12 px-5 py-3 bg-blue-500 rounded-[10px] text-white text-[16px] leading-base font-bold tablet:px-6">
+      <button 
+        type="submit" 
+        className="h-12 px-5 py-3 bg-blue-500 rounded-[10px] text-white text-[16px] leading-base font-bold cursor-pointer transition-all duration-300 tablet:px-6 hover:bg-blue-300"
+      >
         Search
       </button>
     </form>

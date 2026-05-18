@@ -38,7 +38,7 @@ function ProfileInfo({ data }) {
 
         <div className={`flex items-center gap-4 ${data.blog || "opacity-70"}`}>
           <img src={websiteIcon} alt="Website icon" />
-          <p>{data.blog ? data.blog : "Not Available"}</p>
+          <a href={data.blog} className="hover:underline">{data.blog ? data.blog : "Not Available"}</a>
         </div>
 
         <div className={`flex items-center gap-4 ${data.company || "opacity-70"}`}>
