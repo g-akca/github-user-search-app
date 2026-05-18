@@ -3,7 +3,7 @@ import ProfileInfo from "./ProfileInfo";
 
 function ProfileSection({ data, error }) {
   return (
-    <main className="bg-white rounded-[15px] shadow-[0_16px_30px_-10px_rgba(70,96,187,0.2)] px-6 py-8 flex flex-col gap-6 tablet:px-8 tablet:py-12 tablet:flex-row tablet:gap-8">
+    <main className="bg-white rounded-[15px] shadow-[0_16px_30px_-10px_rgba(70,96,187,0.2)] px-6 py-8 flex flex-col gap-6 tablet:px-8 tablet:py-12 tablet:flex-row tablet:gap-8 desktop:p-12">
       {!error ? (
         <>
           <div className="flex gap-5 items-start">
