@@ -36,9 +36,9 @@ function ProfileInfo({ data }) {
           <p>{data.twitter_username ? data.twitter_username : "Not Available"}</p>
         </div>
 
-        <div className={`flex items-center gap-4 ${data.blog || "opacity-70"}`}>
+        <div className={`flex items-center gap-4 focus-within:rounded-sm focus-within:outline-offset-[3px] focus-within:outline-2 focus-within:outline-blue-500 ${data.blog || "opacity-70"}`}>
           <img src={websiteIcon} alt="Website icon" />
-          <a href={data.blog} className="hover:underline">{data.blog ? data.blog : "Not Available"}</a>
+          <a href={data.blog} className="hover:underline focus:outline-none">{data.blog ? data.blog : "Not Available"}</a>
         </div>
 
         <div className={`flex items-center gap-4 ${data.company || "opacity-70"}`}>

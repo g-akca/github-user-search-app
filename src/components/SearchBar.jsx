@@ -37,14 +37,17 @@ function SearchBar({ setData, setError, setLoading, error }) {
   return (
     <form 
       onSubmit={handleSubmit} 
-      className="bg-white px-3 py-2 h-17.25 rounded-2xl shadow-[0_16px_30px_-10px_rgba(70,96,187,0.2)] flex justify-between items-center gap-1.5 tablet:gap-6 tablet:pl-6"
+      className="
+        bg-white px-3 py-2 h-17.25 rounded-2xl shadow-[0_16px_30px_-10px_rgba(70,96,187,0.2)] flex justify-between items-center gap-1.5 
+        outline-blue-500 tablet:gap-6 tablet:pl-6 focus-within:outline-offset-[3px] focus-within:outline-2 focus-within:outline-blue-500
+      "
     >
       <div className="grow flex gap-2 items-center justify-between tablet:gap-5">
         <img src={searchIcon} alt="Search icon" className="w-5 tablet:w-6" />
 
         <input 
           id="username"
-          className="w-full min-w-10 text-[13px] leading-[140%] text-neutral-700 placeholder:text-neutral-500 tablet:text-[18px]" 
+          className="w-full min-w-10 text-[13px] leading-[140%] text-neutral-700 placeholder:text-neutral-500 focus:outline-none tablet:text-[18px]" 
           placeholder="Search GitHub username…" 
           value={searchedValue}
           onChange={(e) => setSearchedValue(e.target.value)}
@@ -55,7 +58,10 @@ function SearchBar({ setData, setError, setLoading, error }) {
 
       <button 
         type="submit" 
-        className="h-12 px-5 py-3 bg-blue-500 rounded-[10px] text-white text-[16px] leading-base font-bold cursor-pointer transition-all duration-300 tablet:px-6 hover:bg-blue-300"
+        className="
+          h-12 px-5 py-3 bg-blue-500 rounded-[10px] text-white text-[16px] leading-base font-bold cursor-pointer transition-colors duration-300 
+          outline-blue-500 tablet:px-6 hover:bg-blue-300 focus:outline-offset-2 focus:outline-2 focus:outline-blue-500
+        "
       >
         Search
       </button>
