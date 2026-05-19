@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import searchIcon from "/images/icon-search.svg";
+import SearchIcon from "./icons/SearchIcon";
 
 function SearchBar({ setData, setError, setLoading, error }) {
   const [searchedValue, setSearchedValue] = useState("");
@@ -44,7 +44,7 @@ function SearchBar({ setData, setError, setLoading, error }) {
       "
     >
       <div className="grow flex gap-2 items-center justify-between tablet:gap-5">
-        <img src={searchIcon} alt="Search icon" className="w-5 tablet:w-6" />
+        <SearchIcon className="text-blue-500 dark:text-blue-300" />
 
         <input 
           id="username"
