@@ -3,15 +3,15 @@ import { createContext, useContext, useState, useEffect, useLayoutEffect } from 
 const ThemeContext = createContext();
 
 export function ThemeProvider({ children }) {
-  const [darkMode, setDarkMode] = useState(false);
-
-  useLayoutEffect(() => {
+  const [darkMode, setDarkMode] = useState(() => {
     const savedTheme = localStorage.getItem("theme");
 
-    if (savedTheme === "dark") {
-      setDarkMode(true);
+    if (savedTheme) {
+      return savedTheme === "dark";
     }
-  }, []);
+
+    return window.matchMedia("(prefers-color-scheme: dark)").matches;
+  });
 
   useEffect(() => {
     const root = document.getElementById("root");
