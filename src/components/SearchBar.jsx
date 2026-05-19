@@ -38,8 +38,9 @@ function SearchBar({ setData, setError, setLoading, error }) {
     <form 
       onSubmit={handleSubmit} 
       className="
-        bg-white px-3 py-2 h-17.25 rounded-2xl shadow-[0_16px_30px_-10px_rgba(70,96,187,0.2)] flex justify-between items-center gap-1.5 
-        outline-blue-500 tablet:gap-6 tablet:pl-6 focus-within:outline-offset-[3px] focus-within:outline-2 focus-within:outline-blue-500
+        bg-white dark:bg-neutral-800 px-3 py-2 h-17.25 rounded-2xl shadow-[0_16px_30px_-10px_rgba(70,96,187,0.2)] dark:shadow-none 
+        flex justify-between items-center gap-1.5 outline-blue-500 tablet:gap-6 tablet:pl-6 focus-within:outline-offset-[3px] 
+        focus-within:outline-2 focus-within:outline-blue-500
       "
     >
       <div className="grow flex gap-2 items-center justify-between tablet:gap-5">
@@ -47,7 +48,7 @@ function SearchBar({ setData, setError, setLoading, error }) {
 
         <input 
           id="username"
-          className="w-full min-w-10 text-[13px] leading-[140%] text-neutral-700 placeholder:text-neutral-500 focus:outline-none tablet:text-[18px]" 
+          className="w-full min-w-10 text-[13px] leading-[140%] text-neutral-700 dark:text-white placeholder:text-neutral-500 dark:placeholder:text-white/70 focus:outline-none tablet:text-[18px]" 
           placeholder="Search GitHub username…" 
           value={searchedValue}
           onChange={(e) => setSearchedValue(e.target.value)}
