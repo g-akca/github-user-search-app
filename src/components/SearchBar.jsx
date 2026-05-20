@@ -40,7 +40,7 @@ function SearchBar({ setData, setError, setLoading, error }) {
       className="
         bg-white dark:bg-neutral-800 px-3 py-2 h-17.25 rounded-2xl shadow-[0_16px_30px_-10px_rgba(70,96,187,0.2)] dark:shadow-none 
         flex justify-between items-center gap-1.5 outline-blue-500 tablet:gap-6 tablet:pl-6 focus-within:outline-offset-[3px] 
-        focus-within:outline-2 focus-within:outline-blue-500
+        focus-within:outline-2 focus-within:outline-blue-500 dark:focus-within:shadow-[0_16px_30px_-10px_rgba(70,96,187,0.2)]
       "
     >
       <div className="grow flex gap-2 items-center justify-between tablet:gap-5">
