@@ -1,7 +1,7 @@
-import locationIcon from "/images/icon-location.svg";
-import twitterIcon from "/images/icon-twitter.svg";
-import websiteIcon from "/images/icon-website.svg";
-import companyIcon from "/images/icon-company.svg";
+import LocationIcon from "./icons/LocationIcon";
+import TwitterIcon from "./icons/TwitterIcon";
+import WebsiteIcon from "./icons/WebsiteIcon";
+import CompanyIcon from "./icons/CompanyIcon";
 
 function ProfileInfo({ data }) {
   return (
@@ -27,22 +27,22 @@ function ProfileInfo({ data }) {
 
       <div className="flex flex-col gap-4 tablet:grid tablet:grid-cols-2">
         <div className={`flex items-center gap-4 ${data.location || "opacity-70"}`}>
-          <img src={locationIcon} alt="Location icon" />
+          <LocationIcon className="text-neutral-900 dark:text-white" />
           <p>{data.location ? data.location : "Not Available"}</p>
         </div>
 
         <div className={`flex items-center gap-4 ${data.twitter_username || "opacity-70"}`}>
-          <img src={twitterIcon} alt="Twitter icon" />
+          <TwitterIcon className="text-neutral-900 dark:text-white" />
           <p>{data.twitter_username ? data.twitter_username : "Not Available"}</p>
         </div>
 
         <div className={`flex items-center gap-4 focus-within:rounded-sm focus-within:outline-offset-[3px] focus-within:outline-2 focus-within:outline-blue-500 ${data.blog || "opacity-70"}`}>
-          <img src={websiteIcon} alt="Website icon" />
+          <WebsiteIcon className="text-neutral-900 dark:text-white" />
           <a href={data.blog} className="hover:underline focus:outline-none">{data.blog ? data.blog : "Not Available"}</a>
         </div>
 
         <div className={`flex items-center gap-4 ${data.company || "opacity-70"}`}>
-          <img src={companyIcon} alt="Company icon" />
+          <CompanyIcon className="text-neutral-900 dark:text-white" />
           <p>{data.company ? data.company : "Not Available"}</p>
         </div>
       </div>
