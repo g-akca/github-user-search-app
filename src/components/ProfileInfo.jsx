@@ -8,20 +8,20 @@ function ProfileInfo({ data }) {
     <div className="flex flex-col gap-6">
       <p className={data.bio || "opacity-75"}>{data.bio ? data.bio : "This profile has no bio"}</p>
 
-      <div className="bg-neutral-100 rounded-[10px] py-4 px-5 flex flex-col gap-4 tablet:px-8 tablet:grid tablet:grid-cols-3">
+      <div className="bg-neutral-100 dark:bg-neutral-900 rounded-[10px] py-4 px-5 flex flex-col gap-4 tablet:px-8 tablet:grid tablet:grid-cols-3">
         <div className="flex flex-col gap-1">
           <p className="text-[13px] leading-base">Repos</p>
-          <p className="text-neutral-700 font-bold text-[22px] leading-[140%]">{data.public_repos}</p>
+          <p className="text-neutral-700 dark:text-white font-bold text-[22px] leading-[140%]">{data.public_repos}</p>
         </div>
 
         <div className="flex flex-col gap-1">
           <p className="text-[13px] leading-base">Followers</p>
-          <p className="text-neutral-700 font-bold text-[22px] leading-[140%]">{data.followers}</p>
+          <p className="text-neutral-700 dark:text-white font-bold text-[22px] leading-[140%]">{data.followers}</p>
         </div>
 
         <div className="flex flex-col gap-1">
           <p className="text-[13px] leading-base">Following</p>
-          <p className="text-neutral-700 font-bold text-[22px] leading-[140%]">{data.following}</p>
+          <p className="text-neutral-700 dark:text-white font-bold text-[22px] leading-[140%]">{data.following}</p>
         </div>
       </div>
 
