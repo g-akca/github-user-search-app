@@ -48,6 +48,7 @@ function SearchBar({ setData, setError, setLoading, error }) {
 
         <input 
           id="username"
+          type="text"
           className="w-full min-w-10 text-[13px] leading-[140%] text-neutral-700 dark:text-white placeholder:text-neutral-500 dark:placeholder:text-white/70 focus:outline-none tablet:text-[18px]" 
           placeholder="Search GitHub username…" 
           value={searchedValue}
