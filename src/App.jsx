@@ -16,7 +16,14 @@ function App() {
         <SearchBar setData={setData} setError={setError} setLoading={setLoading} error={error} />
 
         {!loading ? (
-          <ProfileSection data={data} error={error} />
+          <>
+            {!error && (
+              <p className="sr-only" role="status" aria-atomic="true">
+                Profile for {data.login} loaded.
+              </p>
+            )}
+            <ProfileSection data={data} error={error} />
+          </>
         ) : (
           <p className="text-center" role="status">Loading...</p>
         )}
