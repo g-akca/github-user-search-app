@@ -10,6 +10,7 @@ function SearchBar({ setData, setError, setLoading, error }) {
 
   async function getFetchedData(username) {
     setLoading(true);
+    setError(false);
 
     try {
       const response = await fetch(`https://api.github.com/users/${username}`);
@@ -19,9 +20,8 @@ function SearchBar({ setData, setError, setLoading, error }) {
       const data = await response.json();
 
       setData(data);
-      setError(false);
     }
-    catch(e) {
+    catch (e) {
       setError(true);
     }
 
