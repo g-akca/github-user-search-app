@@ -6,7 +6,7 @@ import { useState } from "react";
 function App() {
   const [data, setData] = useState({});
   const [error, setError] = useState(false);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   return (
     <div className="text-base leading-base text-neutral-500 dark:text-white min-h-screen bg-neutral-100 dark:bg-neutral-900 px-4 py-8 flex justify-center tablet:px-8 tablet:py-10 desktop:py-32.5">
@@ -18,7 +18,7 @@ function App() {
         {!loading ? (
           <ProfileSection data={data} error={error} />
         ) : (
-          <p className="text-center">Loading...</p>
+          <p className="text-center" role="status">Loading...</p>
         )}
       </div>
     </div>
