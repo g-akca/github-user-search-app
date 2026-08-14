@@ -1,14 +1,10 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import SearchIcon from "./icons/SearchIcon";
 
 function SearchBar({ setData, setError, setLoading, error }) {
   const [searchedValue, setSearchedValue] = useState("");
 
-  useEffect(() => {
-    getFetchedData("octocat");
-  }, []);
-
-  async function getFetchedData(username) {
+  const getFetchedData = useCallback(async (username) => {
     setLoading(true);
     setError(false);
 
@@ -21,12 +17,16 @@ function SearchBar({ setData, setError, setLoading, error }) {
 
       setData(data);
     }
-    catch (e) {
+    catch {
       setError(true);
     }
 
     setLoading(false);
-  }
+  }, [setData, setError, setLoading]);
+
+  useEffect(() => {
+    getFetchedData("octocat");
+  }, [getFetchedData]);
 
   function handleSubmit(e) {
     e.preventDefault();
