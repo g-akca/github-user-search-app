@@ -31,7 +31,14 @@ function SearchBar({ setData, setError, setLoading, error }) {
   function handleSubmit(e) {
     e.preventDefault();
 
-    getFetchedData(searchedValue);
+    const trimmedValue = searchedValue.trim();
+
+    if (!trimmedValue) {
+      setError(true);
+      return;
+    }
+
+    getFetchedData(trimmedValue);
   }
 
   return (
