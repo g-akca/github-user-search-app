@@ -9,6 +9,8 @@ function ThemeSwitcher() {
     <button 
       type="button" 
       onClick={() => setDarkMode(prev => !prev)}
+      aria-label={`Switch to ${darkMode ? "light" : "dark"} theme`}
+      aria-pressed={darkMode}
       className="
         flex items-center gap-3 cursor-pointer transition-colors outline-blue-500 tablet:gap-4 hover:text-neutral-700
         focus:rounded-sm focus:outline-offset-[3px] focus:outline-2 focus:outline-blue-500 focus:text-neutral-700
