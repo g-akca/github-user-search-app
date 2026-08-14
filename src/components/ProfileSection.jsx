@@ -12,7 +12,7 @@ function ProfileSection({ data, error }) {
       {!error ? (
         <>
           <div className="flex gap-5 items-start">
-            <img src={data.avatar_url} alt={`${data.name}'s GitHub profile picture`} className="w-17.5 aspect-square rounded-full tablet:w-29.25" />
+            <img src={data.avatar_url} alt={`${data.name || "User"}'s GitHub profile picture`} className="w-17.5 aspect-square rounded-full tablet:w-29.25" />
 
             <ProfileHeader data={data} className="tablet:hidden" />
           </div>
