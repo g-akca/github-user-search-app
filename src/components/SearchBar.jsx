@@ -53,9 +53,18 @@ function SearchBar({ setData, setError, setLoading, error }) {
           placeholder="Search GitHub username…" 
           value={searchedValue}
           onChange={(e) => setSearchedValue(e.target.value)}
+          aria-describedby={error ? "user-error" : undefined}
         />
 
-        {error && <p className="whitespace-nowrap text-red-500 text-[11px] leading-base font-bold tablet:text-[16px]">No results</p>}
+        {error && 
+          <p 
+            id="user-error" 
+            role="alert" 
+            className="whitespace-nowrap text-red-500 text-[11px] leading-base font-bold tablet:text-[16px]"
+          >
+            No results
+          </p>
+        }
       </div>
 
       <button 
