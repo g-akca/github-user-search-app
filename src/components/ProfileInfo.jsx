@@ -27,22 +27,22 @@ function ProfileInfo({ data }) {
 
       <div className="flex flex-col gap-4 tablet:grid tablet:grid-cols-2">
         <div className={`flex items-center gap-4 ${data.location ? "" : "opacity-70"}`}>
-          <LocationIcon className="text-neutral-900 dark:text-white" />
+          <LocationIcon className="text-neutral-900 dark:text-white" aria-hidden="true" />
           <p>{data.location ? data.location : "Not Available"}</p>
         </div>
 
         <div className={`flex items-center gap-4 ${data.twitter_username ? "" : "opacity-70"}`}>
-          <TwitterIcon className="text-neutral-900 dark:text-white" />
+          <TwitterIcon className="text-neutral-900 dark:text-white" aria-hidden="true" />
           <p>{data.twitter_username ? data.twitter_username : "Not Available"}</p>
         </div>
 
         <div className={`flex items-center gap-4 focus-within:rounded-sm focus-within:outline-offset-[3px] focus-within:outline-2 focus-within:outline-blue-500 ${data.blog ? "" : "opacity-70"}`}>
-          <WebsiteIcon className="text-neutral-900 dark:text-white" />
+          <WebsiteIcon className="text-neutral-900 dark:text-white" aria-hidden="true" />
           <a href={data.blog} className="hover:underline focus:outline-none">{data.blog ? data.blog : "Not Available"}</a>
         </div>
 
         <div className={`flex items-center gap-4 ${data.company ? "" : "opacity-70"}`}>
-          <CompanyIcon className="text-neutral-900 dark:text-white" />
+          <CompanyIcon className="text-neutral-900 dark:text-white" aria-hidden="true" />
           <p>{data.company ? data.company : "Not Available"}</p>
         </div>
       </div>
