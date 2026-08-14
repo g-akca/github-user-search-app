@@ -46,7 +46,7 @@ function SearchBar({ setData, setError, setLoading, error }) {
       <div className="grow flex gap-2 items-center justify-between tablet:gap-5">
         <SearchIcon className="shrink-0 w-6 text-blue-500 dark:text-blue-300" aria-hidden="true" />
 
-        <label for="username" className="sr-only">GitHub username</label>
+        <label htmlFor="username" className="sr-only">GitHub username</label>
 
         <input 
           id="username"
